@@ -13,7 +13,7 @@
         <script>
             function newParagraph() {
                 var par = d3.select("#userText").property("value")
-                d3.select("div").append("p").text(par).style("font-size", "30px");
+                d3.select("div").append("p").text(par).style("font-size", "18px");
                 document.getElementById('userText').value = '';
             }
         </script>
@@ -28,7 +28,7 @@
                 <input type="text" id="userText" placeholder="Write a new paragraph">
         </p>
         <button onclick="newParagraph()">Add it</button>
-        <div id="paragraphs" class="result"></div>
+        <div id="paragraphs"></div>
         <br>
         <p class="other"> 
             Click here for changing text color:
