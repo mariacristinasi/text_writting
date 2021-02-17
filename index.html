@@ -7,13 +7,13 @@
             body {background-color: white;}
           .special {color: rgb(11, 102, 11); font-weight: bold; font-size:20px}
           .other {color:  rgb(0, 0, 0); font-weight: bold}
-          .result {color: rgb(0,0,0); font-size:14px}
+          .result {color: rgb(0,0,0)}
         </style>
         <script src="https://d3js.org/d3.v6.min.js"></script>
         <script>
             function newParagraph() {
                 var par = d3.select("#userText").property("value")
-                d3.select("div").append("p").text(par);
+                d3.select("div").append("p").text(par).style("font-size", "14px");
                 document.getElementById('userText').value = '';
             }
         </script>
