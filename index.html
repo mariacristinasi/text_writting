@@ -14,6 +14,7 @@
             function newParagraph() {
                 var par = d3.select("#userText").property("value")
                 d3.select("div").append("p").text(par);
+                document.getElementById('userText').value = '';
             }
         </script>
     </head>
