@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <title>Writting page</title>
+        <style>
+            body {background-color: white;}
+          .special {color: rgb(00, 150, 00); font-weight: bold; font-size:20px}
+          .other {color:  rgb(0, 0, 0); font-weight: bold;}
+          .result {color: rgb(0, 0, 0)}
+        </style>
+        <script src="./d3.v6.min.js"></script>
+        <script>
+            function newParagraph() {
+                var par = document.createElement("p");
+                par.innerHTML = document.getElementById('user text').value; 
+                var text = document.getElementById('paragraphs');
+                text.appendChild(par);
+                text.setAttribute("class", "result");
+            }
+        </script>
+    </head>
+
+    <body>
+        <div class="special"> 
+            Text writting
+        </div>
+        <br>
+        <div class="other"> 
+                <input type="text" id="user text" placeholder="Write a new paragraph">
+        </div>
+        <button onclick="newParagraph()">Add it</button>
+        
+        <div id="paragraphs" class="result"></div>
+        <br>
+        <div class="other"> 
+            Click here for changing text color:
+        </div>
+        <button onclick="paragraphs.style.color = 'rgb(00, 120, 250)'" style="color: rgb(00, 120, 250); font-weight: bold;">BLUE</button>
+        </body>
+</html>
