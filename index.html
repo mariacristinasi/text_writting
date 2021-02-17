@@ -5,38 +5,35 @@
         <title>Writting page</title>
         <style>
             body {background-color: white;}
-          .special {color: rgb(00, 150, 00); font-weight: bold; font-size:20px}
-          .other {color:  rgb(0, 0, 0); font-weight: bold;}
-          .result {color: rgb(0, 0, 0)}
+          .special {color: rgb(11, 102, 11); font-weight: bold; font-size:20px}
+          .other {color:  rgb(0, 0, 0); font-weight: bold}
+          .result {color: rgb(0,0,0); font-size:14px}
         </style>
-        <script src="./d3.v6.min.js"></script>
+        <script src="https://d3js.org/d3.v6.min.js"></script>
         <script>
             function newParagraph() {
-                var par = document.createElement("p");
-                par.innerHTML = document.getElementById('user text').value; 
-                var text = document.getElementById('paragraphs');
-                text.appendChild(par);
-                text.setAttribute("class", "result");
+                var par = d3.select("#userText").property("value")
+                d3.select("div").append("p").text(par);
             }
         </script>
     </head>
 
     <body>
-        <div class="special"> 
-            Text writting
-        </div>
-        <br>
-        <div class="other"> 
-                <input type="text" id="user text" placeholder="Write a new paragraph">
-        </div>
-        <button onclick="newParagraph()">Add it</button>
         
+        <p class="special"> 
+            Text writting
+        </p>
+        <p class="other"> 
+                <input type="text" id="userText" placeholder="Write a new paragraph">
+        </p>
+        <button onclick="newParagraph()">Add it</button>
         <div id="paragraphs" class="result"></div>
         <br>
-        <div class="other"> 
+        <p class="other"> 
             Click here for changing text color:
-        </div>
+        </p>
         <button onclick="paragraphs.style.color = 'rgb(00, 120, 250)'" style="color: rgb(00, 120, 250); font-weight: bold;">BLUE</button>
         <button onclick="paragraphs.style.color = 'rgb(200, 0, 0)'" style="color: rgb(200, 0, 0); font-weight: bold;">RED</button>
 </body>
+
 </html>
