@@ -12,7 +12,7 @@
         <script>
             function newParagraph() {
                 var par = d3.select("#userText").property("value")
-                d3.select("div").append("p").text(par).style("font-size", "16px");
+                d3.select("#paragraphs").append("p").text(par).style("font-size", "16px");
                 document.getElementById('userText').value = '';
             }
         </script>
@@ -20,20 +20,23 @@
 
     <body>
         
-        <p class="special"> 
+        <div class="special"> 
             Text writting
-        </p>
-        <p class="other"> 
-                <input type="text" id="userText" placeholder="Write a new paragraph">
-        </p>
-        <button onclick="newParagraph()">Add it</button>
-        <div id="paragraphs"></div>
+        </div>
         <br>
-        <p class="other"> 
+        <div class="other"> 
+                <input type="text" id="userText" placeholder="Write a new paragraph">
+        </div>
+        <br>
+        <button onclick="newParagraph()">Add it</button>
+        <div id="paragraphs" style="color: rgb(0, 0, 0)"></div>
+        <br>
+        <br>
+        <div class="other"> 
             Click here for changing text color:
-        </p>
-        <button onclick="paragraphs.style.color = 'rgb(00, 120, 250)'" style="color: rgb(00, 120, 250); font-weight: bold;">BLUE</button>
-        <button onclick="paragraphs.style.color = 'rgb(200, 0, 0)'" style="color: rgb(200, 0, 0); font-weight: bold;">RED</button>
+        </div>
+        <button onclick="d3.selectAll('p').style('color','rgb(00, 120, 250)')" style="color: rgb(00, 120, 250); font-weight: bold;">BLUE</button>
+        <button onclick="d3.selectAll('p').style('color','rgb(200, 0, 0)')" style="color: rgb(200, 0, 0); font-weight: bold;">RED</button>
 </body>
 
 </html>
